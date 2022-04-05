@@ -1,4 +1,4 @@
-var mssql = require('../node_modules/mssql');
+var mssql = require('mssql');
     // MSSQL connect
     var db_config = {
     server:'BELYAEV-PC\SQLEXPRESS',
@@ -23,3 +23,31 @@ async () => {
 
 
 module.exports = mssql
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+const sequelize = new Sequelize('DB Name', 'Username', 'Password', {
+    host: 'Host',
+    dialect: 'mssql',
+    dialectOptions: {
+        options: {
+            encrypt: true,
+        }
+    }
+  });
+
+
+
+  */

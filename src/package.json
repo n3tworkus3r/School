@@ -13,6 +13,9 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "mssql": "^8.0.2"
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mssql": "^8.0.2",
+    "path": "^0.12.7"
   }
 }
