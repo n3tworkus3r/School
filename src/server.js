@@ -4,8 +4,25 @@ const fs = require('fs')
 
 const server = http.createServer((req,res) => {
     if(req.method === 'GET') {
-        res.writeHead(200, {'Content-Type':'text/html'})
+        res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'})
         
+        if(req.url === '/') {
+            fs.readFile(path.join(__dirname,'pages','index.html'), 'utf-8',
+            (err,content) => {
+                if(err) { throw err }
+                res.end(content)
+            })
+        } else if (req.method === 'POST') {
+            const body = []
+
+            req.on('data', data => {
+                body.push(Buffer.from(data))
+            })
+        }
+        res.end(`
+        <h1>Ваше сообщение</h1>`)
+
+        /*
         switch(req.url) {
             case '/':
                 fs.readFile(path.join(__dirname,'pages','index.html'), 'utf-8',
@@ -22,8 +39,7 @@ const server = http.createServer((req,res) => {
                 })
             break
   
-        }
-        res.end()
+        } */
     }
 })
 
