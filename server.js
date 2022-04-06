@@ -1,11 +1,40 @@
-const http = require('http')
-const path = require('path')
-const fs = require('fs')
+////////// USED MODULES //////////
+const handlebars = require('express-handlebars')
+const express = require('express')
+//const fs = require('fs')
+//const path = require('path') // enable for express routing
+//const http = require('http')
+//////////////////////////////////
 
-const server = http.createServer((req,res) => {
-    
-    
-    switch(req.method) {
+//////// SERVER INSTANCES ////////
+const app = express()
+//const server = http.createServer((req,res) => { })
+/////////////////////////////////
+
+////// HANDLEBARS SETTING ///////
+const hbs = handlebars.create({
+    defaultLayout: 'main',
+    extname: 'hbs'
+})
+
+app.engine('hbs', hbs.engine)
+app.set('view engine', 'hbs')
+app.set('views', 'src/pages')
+/////////////////////////////////
+
+ app.get('/',(req,res) => {
+     res.status(200)
+     res.render('index')
+     //res.sendFile(path.join(__dirname,'src/pages','index.html'))
+ })
+
+ app.get('/about',(req,res) => {
+    res.status(200)
+    res.render('about')
+    //res.sendFile(path.join(__dirname,'src/pages','about.html'))
+})
+    ///////// HTTP ROUTING //////////
+    /*    switch(req.method) {
         case 'GET':
             res.writeHead(200, {'Content-Type':'text/html; charset=UTF-8'})
             
@@ -28,14 +57,26 @@ const server = http.createServer((req,res) => {
             }
         break
         case 'POST':
-           
+           //
+           //
+           //
         break
-
     }
-})
+    */
+    /////////////////////////////////
 
 
-// Запуск сервера
-server.listen(3000, () => {
-    console.log('Server is running...')
-})
+
+    const PORT = process.env.PORT || 3000  
+    // Запуск сервера (express)
+    app.listen(PORT,() => {
+        console.log(`Server is running on port ${PORT}`)
+    })
+
+
+    /*
+    // Запуск сервера (http)
+    server.listen(3000, () => {
+        console.log('Server is running...')
+    })
+    */

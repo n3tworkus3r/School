@@ -13,6 +13,8 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "mssql": "^8.0.2",
