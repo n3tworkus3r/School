@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-//const sequelize = require("../config/databaseConfig");
+const sequelize = require("../database/db_connect");
 
 /*
 CREATE TABLE Classes  

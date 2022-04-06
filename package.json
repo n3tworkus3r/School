@@ -18,6 +18,8 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "mssql": "^8.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^6.18.0",
+    "tedious": "^14.4.0"
   }
 }

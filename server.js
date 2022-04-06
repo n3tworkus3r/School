@@ -1,11 +1,12 @@
 ////////// USED MODULES //////////
 const handlebars = require('express-handlebars')
 const express = require('express')
-const mssql = require('./src/database/db_operations')
+//const mssql = require('./src/database/db_operations')
 const index_routes =  require('./src/routes/index')
 const subjects_routes =  require('./src/routes/subjects')
 const tasks_routes =  require('./src/routes/tasks')
 const add_routes =  require('./src/routes/add')
+const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
 //const http = require('http')
@@ -27,10 +28,7 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-app.use(express.static('/css'))
-//app.use(express.static('/src/css'))
 app.use(express.static('src/public'))
-console.log(__dirname + 'public')
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////
@@ -40,12 +38,45 @@ app.use('/tasks',tasks_routes)
 app.use('/add',add_routes)
 /////////////////////////////////
 
+////////// DB CONNECT ///////////
 
 const PORT = process.env.PORT || 3000  
-// Запуск сервера (express)
-app.listen(PORT,() => {
-    console.log(`Server is running on port ${PORT}`)
-})
+
+async function start() {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+
+        // Запуск сервера (express)
+        app.listen(PORT,() => {
+            console.log(`Server is running on port ${PORT}`)
+        })
+
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
+start()
+/*
+const PORT = process.env.PORT || 3000  
+async function start() {
+    try {
+        await sequelize.sync()
+
+        // Запуск сервера (express)
+        app.listen(PORT,() => {
+            console.log(`Server is running on port ${PORT}`)
+        })
+    }
+    catch(err) {
+        console.log(err)
+    }  
+}
+*/
+
+
+
+
 
 
 
