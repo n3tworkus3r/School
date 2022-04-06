@@ -1,2 +1,2 @@
 # School
--- NodeJS -- ExpressJS -- Handlebars -- MSSQL 
+-- NodeJS -- ExpressJS -- Handlebars -- T-SQL (Sequelize) --
