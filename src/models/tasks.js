@@ -48,4 +48,6 @@ const Tasks = sequelize.define("Tasks", {
 });
 
 
+
+
 module.exports = Tasks;

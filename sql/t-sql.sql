@@ -117,3 +117,13 @@ ALTER TABLE User_infos
 ALTER TABLE Users
 	ADD CONSTRAINT FK_Users_User_infos 
 	FOREIGN KEY(user_id) REFERENCES User_infos(user_id)
+
+
+
+------------------- Заполнение таблиц -------------------
+
+---- Tasks ----
+INSERT Tasks (text, solution, img,complexity)  
+    VALUES ( 'Task', 'Solution', 'none',3.2)
+     ( 'Task2', 'Solution2', 'XXX',5.0)  
+GO     

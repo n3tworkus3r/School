@@ -1,11 +1,11 @@
 ////////// USED MODULES //////////
 const handlebars = require('express-handlebars')
 const express = require('express')
-
+const mssql = require('./src/database/db_operations')
 //const index_routes =  require('./src/routes/index')
-const subjects_routes =  require('./src/routes/subjects')
+//const subjects_routes =  require('./src/routes/subjects')
 const tasks_routes =  require('./src/routes/tasks')
-const add_routes =  require('./src/routes/add')
+//const add_routes =  require('./src/routes/add')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
 //const http = require('http')
@@ -54,14 +54,14 @@ app.get('/subjects',(req,res) => {
         title: 'Subjects',
         subjects: true
     })
-})
-
+})/*
 app.get('/tasks',(req,res) => { 
     res.render('tasks', {
         title: 'Tasks',
         tasks: true
     }) 
 })
+*/
 
 app.get('/add',(req,res) => {
     res.render('add', {
@@ -70,9 +70,19 @@ app.get('/add',(req,res) => {
     }) 
 })
 
+
+app.get('/testconnect',(req,res) => {
+    
+    mssql.get_data()
+    res.render('index', {
+        title: 'Main',
+        main: true
+    })
+    //res.sendFile(path.join(__dirname,'src/pages','index.html'))
+})
 //app.use('/',index_routes)
 //app.use('/src/subjects',subjects_routes)
-//app.use('/tasks',tasks_routes)
+app.use('/tasks',tasks_routes)
 //app.use('/src/add',add_routes)
 /////////////////////////////////
 

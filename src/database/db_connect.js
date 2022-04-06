@@ -1,3 +1,4 @@
+/*
 var mssql = require('mssql');
     // MSSQL connect
     var db_config = {
@@ -10,6 +11,27 @@ var mssql = require('mssql');
 
 
 
+module.exports = mssql
+*/
+
+
+const config = {
+
+    user:'AD\belyaevms',
+    password:'B3L7A3VM',
+    server:'BELYAEV-PC',
+    database:'School',
+    options: {
+        trustedconnection: true,
+        andbleArithAbort: true,
+        instancename: ''
+
+    },
+    port:1433
+}
+module.exports = config
+
+/*
 async () => {
     try {
      await sql.connect(sqlConfig)
@@ -19,10 +41,9 @@ async () => {
      // ... error checks
     }
    }
+*/
 
 
-
-module.exports = mssql
 
 
 
