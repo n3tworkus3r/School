@@ -46,7 +46,7 @@ const Classes = sequelize.define("Classes", {
     unique: false,
     field: "middle_rate"
   }
-});
+})
 
 
-module.exports = Classes;
+module.exports = Classes

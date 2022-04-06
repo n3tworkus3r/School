@@ -1,7 +1,6 @@
 ////////// USED MODULES //////////
 const handlebars = require('express-handlebars')
 const express = require('express')
-//const mssql = require('./src/database/db_operations')
 const index_routes =  require('./src/routes/index')
 const subjects_routes =  require('./src/routes/subjects')
 const tasks_routes =  require('./src/routes/tasks')
@@ -38,30 +37,11 @@ app.use('/tasks',tasks_routes)
 app.use('/add',add_routes)
 /////////////////////////////////
 
-////////// DB CONNECT ///////////
-
-const PORT = process.env.PORT || 3000  
-
-async function start() {
-    try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
-
-        // Запуск сервера (express)
-        app.listen(PORT,() => {
-            console.log(`Server is running on port ${PORT}`)
-        })
-
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-}
-start()
-/*
+///// CONNECTION TO SERVER //////
 const PORT = process.env.PORT || 3000  
 async function start() {
     try {
-        await sequelize.sync()
+        await sequelize.sync( /*{force: true}*/)
 
         // Запуск сервера (express)
         app.listen(PORT,() => {
@@ -72,7 +52,9 @@ async function start() {
         console.log(err)
     }  
 }
-*/
+/////////////////////////////////
+
+start()
 
 
 
@@ -116,13 +98,6 @@ app.get('/subjects',(req,res) => {
 */
 /////////////////////////////////
 
-/*
-// Запуск сервера (http)
-server.listen(3000, () => {
-    console.log('Server is running...')
-})
-*/
-
 ///////// HTTP ROUTING //////////
 /*    switch(req.method) {
     case 'GET':
@@ -155,3 +130,23 @@ server.listen(3000, () => {
 */
 /////////////////////////////////
 
+////////// DB CONNECT ///////////
+/*
+const PORT = process.env.PORT || 3000  
+
+async function start() {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+
+        // Запуск сервера (express)
+        app.listen(PORT,() => {
+            console.log(`Server is running on port ${PORT}`)
+        })
+
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
+start()*/
+/////////////////////////////////

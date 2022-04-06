@@ -45,9 +45,9 @@ const Tasks = sequelize.define("Tasks", {
     unique: false,
     field: "complexity"
   }
-});
+})
 
 
 
 
-module.exports = Tasks;
+module.exports = Tasks
