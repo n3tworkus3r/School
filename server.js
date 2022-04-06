@@ -2,10 +2,10 @@
 const handlebars = require('express-handlebars')
 const express = require('express')
 const mssql = require('./src/database/db_operations')
-//const index_routes =  require('./src/routes/index')
-//const subjects_routes =  require('./src/routes/subjects')
+const index_routes =  require('./src/routes/index')
+const subjects_routes =  require('./src/routes/subjects')
 const tasks_routes =  require('./src/routes/tasks')
-//const add_routes =  require('./src/routes/add')
+const add_routes =  require('./src/routes/add')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
 //const http = require('http')
@@ -26,12 +26,36 @@ const hbs = handlebars.create({
 //// VARIABLES REGISTRATION /////
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
-app.set('views', './src/pages')
 
-app.use(express.static(__dirname + '/src/public'))
+app.use(express.static(__dirname + '/src/views'))
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////
+app.use('/',index_routes)
+app.use('/subjects',subjects_routes)
+app.use('/tasks',tasks_routes)
+app.use('/add',add_routes)
+/////////////////////////////////
+
+
+const PORT = process.env.PORT || 3000  
+// Запуск сервера (express)
+app.listen(PORT,() => {
+    console.log(`Server is running on port ${PORT}`)
+})
+
+
+
+
+
+
+
+
+
+
+
+////// OLD EXPRESS ROUTING //////
+/*
 app.get('/',(req,res) => {
     res.status(200)
     res.render('index', {
@@ -54,60 +78,9 @@ app.get('/subjects',(req,res) => {
         title: 'Subjects',
         subjects: true
     })
-})/*
-app.get('/tasks',(req,res) => { 
-    res.render('tasks', {
-        title: 'Tasks',
-        tasks: true
-    }) 
 })
 */
-
-app.get('/add',(req,res) => {
-    res.render('add', {
-        title: 'Add',
-        add: true
-    }) 
-})
-
-
-app.get('/testconnect',(req,res) => {
-    
-    mssql.get_data()
-    res.render('index', {
-        title: 'Main',
-        main: true
-    })
-    //res.sendFile(path.join(__dirname,'src/pages','index.html'))
-})
-//app.use('/',index_routes)
-//app.use('/src/subjects',subjects_routes)
-app.use('/tasks',tasks_routes)
-//app.use('/src/add',add_routes)
 /////////////////////////////////
-
-
-const PORT = process.env.PORT || 3000  
-// Запуск сервера (express)
-app.listen(PORT,() => {
-    console.log(`Server is running on port ${PORT}`)
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 // Запуск сервера (http)
@@ -115,6 +88,7 @@ server.listen(3000, () => {
     console.log('Server is running...')
 })
 */
+
 ///////// HTTP ROUTING //////////
 /*    switch(req.method) {
     case 'GET':

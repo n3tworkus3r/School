@@ -1,6 +1,9 @@
 const Router = require('express')
-const router = Router()
 const mssql = require('../database/db_operations')
+
+const router = Router()
+
+router.set('views', './src/views')
 
 router.get('/',(req,res) => {
     res.status(200)

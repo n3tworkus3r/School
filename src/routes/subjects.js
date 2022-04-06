@@ -1,6 +1,8 @@
 const Router = require('express')
 const router = Router()
 
+router.set('views', './src/views')
+
 router.get('/',(req,res) => {
     res.status(200)
     res.render('subjects', {
