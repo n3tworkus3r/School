@@ -27,7 +27,10 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-app.use(express.static(__dirname + '/src/views'))
+app.use(express.static('/css'))
+//app.use(express.static('/src/css'))
+app.use(express.static('src/public'))
+console.log(__dirname + 'public')
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////
