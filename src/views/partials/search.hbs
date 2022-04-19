@@ -1,0 +1,91 @@
+  <!---------- SEARCH ------------>
+  <a id="search_btn">Поиск</a>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+
+
+        <div id="subject_panel">
+            <h3 id="modal_header">Предмет</h3>
+            <button class="subject_btn phys">Физика</button>
+            <button class="subject_btn math">Математика</button>
+            <button class="subject_btn chem">Химия</button>
+            <button class="subject_btn bio">Биология</button>
+        </div>
+
+        <div id="class_panel">
+            <div class="btn-group">
+                <h3 id="modal_header">Класс</h3>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+                <button>11</button>
+            </div>
+        </div>  
+
+    
+
+        <button class="accordion">Раздел</button>
+        <div class="panel">
+            <p>Какие-то разделы</p>
+        </div>
+
+
+    </div>
+  </div>
+
+
+<script>
+/***************************************************
+******************** SEARCH ************************
+***************************************************/
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("search_btn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+
+
+</script>

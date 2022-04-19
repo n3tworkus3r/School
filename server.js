@@ -1,11 +1,12 @@
 ////////// USED MODULES //////////
+
 const handlebars = require('express-handlebars')
 const express = require('express')
 const index_routes =  require('./src/routes/index')
 const subjects_routes =  require('./src/routes/subjects')
 const tasks_routes =  require('./src/routes/tasks')
 const add_routes =  require('./src/routes/add')
-const sequelize = require('./src/database/db_connect')
+//const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
 //const http = require('http')
@@ -28,6 +29,8 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
 app.use(express.static('src/public'))
+app.use(express.static('src/images'))
+app.use(express.static('src/js'))
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////
@@ -35,13 +38,14 @@ app.use('/',index_routes)
 app.use('/subjects',subjects_routes)
 app.use('/tasks',tasks_routes)
 app.use('/add',add_routes)
+/*app.use('/search',search_routes)*/
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////
 const PORT = process.env.PORT || 3000  
 async function start() {
     try {
-        await sequelize.sync( /*{force: true}*/)
+        //await sequelize.sync( /*{force: true}*/)
 
         // Запуск сервера (express)
         app.listen(PORT,() => {

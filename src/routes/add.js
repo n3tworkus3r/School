@@ -32,6 +32,7 @@ router.post('/',(req,res) => {
 
     task.save()
     res.redirect('/tasks')
-})*/
+})
+*/
 
 module.exports = router

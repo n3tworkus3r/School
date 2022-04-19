@@ -1,0 +1,137 @@
+
+
+
+
+<div class="task_container">
+
+
+<!-- Control buttons -->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+<div class="container">
+  <div class="filterDiv cars">Какое количество электричества (электронов) проходит за время t=1,5 ч непрерывной работы сварочного аппарата при силе тока I=50 А? Сколько электронов проходит через сечение проводника за это время?</div>
+  <div class="filterDiv colors fruits">Orange</div>
+  <div class="filterDiv cars">Volvo</div>
+  <div class="filterDiv colors">Red</div>
+  <div class="filterDiv cars animals">Mustang</div>
+  <div class="filterDiv colors">Blue</div>
+  <div class="filterDiv animals">Cat</div>
+  <div class="filterDiv animals">Dog</div>
+  <div class="filterDiv fruits">Melon</div>
+  <div class="filterDiv fruits animals">Kiwi</div>
+  <div class="filterDiv fruits">Banana</div>
+  <div class="filterDiv fruits">Lemon</div>
+  <div class="filterDiv animals">Cow</div>
+</div>
+
+</div>
+
+
+
+
+<script>
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+/**************************************************
+********************* SEARCH **********************
+**************************************************
+
+
+  <!---------- SUBJECTS   ----------
+<div class="filter_container">
+
+
+
+  <div class="search">
+    <button onclick="search_drop()" class="search_btn">Задачи</button>
+    <div id="search_dropdown" class="search-content">
+      <input type="text" placeholder="Search.." id="search_input" onkeyup="filterFunction()">
+      <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a>
+    </div>
+  </div>
+</div>
+-->
+
+
+
+function search_drop() {
+  document.getElementById("search_dropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("search_input");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("search_dropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+*/
+</script>
