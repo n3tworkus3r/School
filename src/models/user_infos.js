@@ -14,7 +14,7 @@ CREATE TABLE User_infos
 
 const User_infos = sequelize.define("User_infos", {
   user_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,

@@ -13,7 +13,7 @@ CREATE TABLE Subjects
 
 const Subjects = sequelize.define("Subjects", {
   subject_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
@@ -27,13 +27,13 @@ const Subjects = sequelize.define("Subjects", {
     field: "name"
   },
   task_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: false,
     field: "task_id"
   },
   task_quantity: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: false,
     autoIncrement: true,

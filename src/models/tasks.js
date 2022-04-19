@@ -14,7 +14,7 @@ CREATE TABLE Tasks
 
 const Tasks = sequelize.define("Tasks", {
   task_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,

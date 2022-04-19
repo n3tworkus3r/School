@@ -15,7 +15,7 @@ CREATE TABLE Classes
 
 const Classes = sequelize.define("Classes", {
   class_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
@@ -23,19 +23,19 @@ const Classes = sequelize.define("Classes", {
     field: "class_id"
   },
   subject_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: false,
     field: "subject_id"
   },
   teacher_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: false,
     field: "teacher_id"
   },
   student_quantity: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: false,
     field: "student_quantity"

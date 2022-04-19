@@ -12,7 +12,7 @@ CREATE TABLE Class_subjects
 
 const Class_subjects = sequelize.define("Class_subjects", {
   class_subject_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
@@ -20,13 +20,13 @@ const Class_subjects = sequelize.define("Class_subjects", {
     field: "class_subject_id"
   },
   class_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: true,
     field: "class_id"
   },
   subject_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: false,
     unique: true,
     field: "subject_id"

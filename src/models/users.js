@@ -13,7 +13,7 @@ CREATE TABLE Users
 
 const Users = sequelize.define("Users", {
   id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
@@ -32,7 +32,7 @@ const Users = sequelize.define("Users", {
     field: "password"
   },
   role: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     allowNull: true,
     unique: false,
     field: "role"
