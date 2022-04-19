@@ -104,7 +104,7 @@ xtab-filter
 
 -------------------------------- */
 .cd-tab-filter-wrapper {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
   z-index: 1;
 }
@@ -320,7 +320,7 @@ xfilter
   left: 0;
   width: 280px;
   height: 100%;
-  background: #ffffff;
+  background: #444;
   box-shadow: 4px 4px 20px transparent;
   z-index: 2;
   /* Force Hardware Acceleration in WebKit */
@@ -340,8 +340,10 @@ xfilter
   -moz-transition: -moz-transform 0.3s, box-shadow 0.3s;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/*
 .cd-filter::before {
-  /* top colored bar */
+
   content: '';
   position: absolute;
   top: 0;
@@ -350,9 +352,9 @@ xfilter
   width: 100%;
   background-color: #41307c;
   z-index: 2;
-}
+}*/
 .cd-filter form {
-  padding: 70px 20px;
+  padding: 10px 20px;
 }
 .cd-filter .cd-close {
   position: absolute;
@@ -390,24 +392,26 @@ xfilter
     width: 20%;
   }
   .cd-filter form {
-    padding: 70px 10%;
+    padding: 10px 10%;
   }
 }
 
 .cd-filter-trigger {
-  position: absolute;
+  /*position: absolute;
   top: 0;
   left: 0;
   height: 50px;
   line-height: 50px;
   width: 60px;
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  color: transparent;
-  white-space: nowrap;
-  background: transparent url("../img/cd-icon-filter.svg") no-repeat center center;
-  z-index: 3;
+
+
+overflow: hidden;
+text-indent: 100%;
+color: transparent;
+white-space: nowrap;
+background: transparent url("../img/cd-icon-filter.svg") no-repeat center center;
+z-index: 3;
+*/
 }
 .cd-filter-trigger.filter-is-visible {
   pointer-events: none;

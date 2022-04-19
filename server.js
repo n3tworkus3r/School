@@ -28,7 +28,7 @@ const hbs = handlebars.create({
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-app.use(express.static('src/public'))
+app.use(express.static('src/css'))
 app.use(express.static('src/images'))
 app.use(express.static('src/js'))
 /////////////////////////////////
@@ -37,7 +37,7 @@ app.use(express.static('src/js'))
 app.use('/',index_routes)
 app.use('/subjects',subjects_routes)
 app.use('/tasks',tasks_routes)
-app.use('/add',add_routes)
+//app.use('/add',add_routes)
 /*app.use('/search',search_routes)*/
 /////////////////////////////////
 

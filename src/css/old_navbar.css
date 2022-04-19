@@ -1,4 +1,6 @@
 .navbar {
+    margin-left: 86%;
+    border-radius: 0 0 0 30px;
     overflow: hidden;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +16,14 @@
     text-decoration: none;
 }
 
-
+#search_img {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
   
 /**************** PROFILE *******************/
   .profile {
@@ -36,6 +45,7 @@
   
   .navbar a:hover, .profile:hover .profile_btn, .profile_btn:focus {
     background-color: red;
+    border-radius: 0 0 10px 0;
   }
   
   .profile-content {

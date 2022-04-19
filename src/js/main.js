@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
 	});
+	
 	$('.cd-filter .cd-close').on('click', function(){
 		triggerFilter(false);
 	});
