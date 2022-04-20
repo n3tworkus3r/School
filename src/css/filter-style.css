@@ -17,14 +17,14 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/*
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
   color: #fff;
   background-color: #e7e7e7;
 }
-
+*/
 a {
   color: #41307c;
   text-decoration: none;
@@ -366,7 +366,7 @@ xfilter
   color: #ffffff;
   font-size: 1.3rem;
   text-align: center;
-  background: #37296a;
+  background: #4b19ff;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
