@@ -3,7 +3,7 @@ const Tasks = require('../models/tasks')
 
 const router = Router()
 
-router.set('views', './src/views')
+router.set('views', './src/views/')
 
 router.get('/',(req,res) => {
     res.render('add', {
@@ -12,6 +12,10 @@ router.get('/',(req,res) => {
     }) 
 })
 
+router.post('/',(req,res) => {
+    console.log(req.body)
+})
+/*
 
 router.post('/', async (req,res) => {
    
@@ -28,7 +32,7 @@ router.post('/', async (req,res) => {
         console.log(err)
         res.status(500).json({ message: 'Server error' })
     }*/
-})
+//})
 
 /*
 router.post('/',(req,res) => {

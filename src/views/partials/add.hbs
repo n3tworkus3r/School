@@ -1,46 +1,73 @@
-  <!---------- SEARCH ------------>
-  <a href="#home" id="search_btn"><img src="add.png"  height="25px" width="25px"/></a>
+  <!---------- SEARCH ----------->
+  <a href="#add" id="search_btn"><img src="add.png"  height="25px" width="25px"/></a>
   
 
 
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h1>Добавить задачу</h1>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Добавить задачу</h1>
 
+    <form action"/#add" method="POST">
+      <label for="text">Текст задачи</label>
+      <textarea id="text" name="subject" placeholder="Введите что-нибудь.." class="validate" style="height:200px"></textarea>
 
+      <label for="subject">Ответ</label>
+      <textarea id="subject" name="subject" placeholder="Введите что-нибудь.." class="validate" style="height:50px"></textarea>
 
-        <div id="class_panel">
-            <div class="btn-group">
-                <h3 id="modal_header">Класс</h3>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>10</button>
-                <button>11</button>
-            </div>
-        </div>  
+      <label for="img">Изображение</label>
+      <input id="img" type="text" placeholder="Путь к картинке" class="validate">
 
-    
+      <button class="btn btn-primary">Сохранить</button>
+    </form>
 
-        <button class="accordion">Раздел</button>
-        <div class="panel">
-            
-        <div id="subject_panel">
-            <h3 id="modal_header">Предмет</h3>
-            <button class="subject_btn phys">Физика</button>
-            <button class="subject_btn math">Математика</button>
-            <button class="subject_btn chem">Химия</button>
-            <button class="subject_btn bio">Биология</button>
-        </div>
-        </div>
-
-
-    </div>
   </div>
+</div>
+
+
+<style>
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
