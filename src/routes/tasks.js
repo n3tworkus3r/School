@@ -12,4 +12,23 @@ router.get('/',(req,res) => {
     }) 
 })
 
+
+////////////////////// NEW CODE
+router.post('/', async (req,res) => { 
+   try {
+       const task = await Tasks.create( {
+           title: req.body.title,
+           done: false
+       })
+       res.status(201).json({task})
+   } catch (err) {
+       console.log(err)
+       res.status(500).json({
+           message: 'Server error!'
+       })
+       
+   } 
+})
+///////////////////////////////
+
 module.exports = router

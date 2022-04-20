@@ -14,7 +14,11 @@ router.get('/',(req,res) => {
 
 
 router.post('/', async (req,res) => {
-    try {
+   
+    const task = new Tasks(req.body.text, req.body.solution, req.body.img, req.body.complexity)
+    task.save()
+    res.redirect('/tasks')
+   /* try {
         const tasks = await Tasks.create({
             title: req.body.title,
             done: false
@@ -23,7 +27,7 @@ router.post('/', async (req,res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({ message: 'Server error' })
-    }
+    }*/
 })
 
 /*

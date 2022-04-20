@@ -1,6 +1,9 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database/db_connect");
-
+const Sequelize = require('sequelize');
+const sequelize = require('../database/db_connect');
+const uuid = require('uuid')
+const fs = require('fs')
+const path = require('path');
+const res = require('express/lib/response');
 /*
 CREATE TABLE Tasks  
 (
@@ -12,6 +15,39 @@ CREATE TABLE Tasks
 );
 */
 
+class Tasks {
+  constructor(text,solution,img,complexity){
+    this.id = uuid(),
+    this.text = text,
+    this.solution = solution,
+    this.img = img,
+    this.complexity = complexity
+  }
+
+  async save() {
+    const tasks = await Tasks.get_all()
+    console.log('Tasks', tasks)
+  }
+
+  static get_all() {
+    return new Promise((resolve,reject) => {
+      fs.readFile(
+        path.join(__dirname,'..','database','tasks.json'),
+        'utf-8',
+        (err,content) => {
+          if (err) { 
+            reject(err)
+          }
+          else {
+            resolve(JSON.parse(content))
+          }
+          
+        }
+      )
+    })
+  }
+}
+/*
 const Tasks = sequelize.define("Tasks", {
   task_id: {
     type: Sequelize.INTEGER,
@@ -47,7 +83,7 @@ const Tasks = sequelize.define("Tasks", {
   }
 })
 
-
+*/
 
 
 module.exports = Tasks
