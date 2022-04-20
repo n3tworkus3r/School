@@ -1,6 +1,6 @@
   <!---------- PROFILE ---------->
   <div class="profile" id="profile_btn">
-    <button class="profile_btn" onclick="profile_drop()">Профиль  <i class="fa fa-caret-down"></i> </button>
+    <button class="profile_btn" onclick="profile_drop()">Профиль <!-- <i class="fa fa-caret-down"></i>--> </button>
     <div class="profile-content" id="profile_dropdown">
       <a href="#">Мой профиль</a>
       <a href="#">Добавить</a>
@@ -47,6 +47,7 @@ function profile_drop() {
   
   .navbar a:hover, .profile:hover .profile_btn, .profile_btn:focus {
     background-color: red;
+    padding: 14px 16px;
   }
   
   .profile-content {
@@ -72,6 +73,6 @@ function profile_drop() {
   }
   
   .show {
-    display: block;
+    display: grid;
   }
 </style>
