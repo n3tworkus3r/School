@@ -3,7 +3,6 @@
 const handlebars = require('express-handlebars')
 const express = require('express')
 const index_routes =  require('./src/routes/index')
-const add_routes =  require('./src/routes/add')
 //const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
@@ -35,8 +34,6 @@ app.use(express.urlencoded({extended: false}))
 
 //////// EXPRESS ROUTING ////////
 app.use('/',index_routes)
-app.use('/#add',add_routes)
-/*app.use('/search',search_routes)*/
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////
