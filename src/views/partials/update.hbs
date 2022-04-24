@@ -1,6 +1,7 @@
-  <!---------- ADD ----------->
-  <a href="#add" id="search_btn"><img src="add.png"  height="25px" width="25px"/></a>
-  
+<!---------- UPDATE ----------->
+<a href="/{{id}}/edit?allow=true"><img src="update.png"  height="25px" width="25px"/></a>
+
+
 
 
 <div id="myModal" class="modal">
@@ -18,8 +19,7 @@
       <label for="img">Изображение</label>
       <input id="img" name="img" type="text" placeholder="Путь к картинке" class="validate">
 
-      <label for="chapter">Раздел</label>
-      <div id="chapter" name="chapter" class="cd-filter-content">
+      <div class="cd-filter-content">
         <div class="cd-select cd-filters">
           <select class="filter" name="selectThis" id="selectThis">
             <option value=".option1">Все</option>
@@ -29,7 +29,7 @@
             <option value=".option4">Электродинамика</option>
           </select>
         </div> 
-      </div>
+      </div> >
       
       <label for="year">Класс</label>
       <input id="year" name="year" type="text" placeholder="От 6 до 11" class="validate">

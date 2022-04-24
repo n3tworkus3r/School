@@ -4,6 +4,7 @@ const uuid = require('uuid')
 const fs = require('fs')
 const path = require('path');
 const res = require('express/lib/response');
+
 /*
 CREATE TABLE Tasks  
 (
@@ -16,19 +17,70 @@ CREATE TABLE Tasks
 */
 
 class Tasks {
-  constructor(text,solution,img,complexity){
-    this.id = uuid(),
+  constructor(text,solution,img,year,chapter,complexity){
+    this.id = uuid.v4(),
     this.text = text,
     this.solution = solution,
     this.img = img,
+    this.year = year,
+    this.chapter = chapter,
     this.complexity = complexity
   }
 
-  async save() {
-    const tasks = await Tasks.get_all()
-    console.log('Tasks', tasks)
+  // Функция, преобразующая данные из html в формат JSON
+  to_json() {
+    return {
+      id: this.id,
+      text: this.text,
+      solution: this.solution,
+      img: this.img,
+      year: this.year,
+      complexity: this.complexity
+    }
   }
 
+  static async update() {
+    const tasks = await Tasks.get_all()
+    const index = tasks.findIndex( t => t.id === task.id)
+    tasks[index] = task
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, '..', 'database', 'tasks.json'),
+        JSON.stringify(tasks),
+        (err) => {
+          if(err) {
+            reject(err)
+          }else{
+            resolve()
+          }
+        }
+      )
+    })
+  }
+
+  // Функция, сохраняющая в файл tasks.json добавленную задачу
+  async save() {
+    const tasks = await Tasks.get_all()
+    //console.log('Tasks', tasks)
+    tasks.push(this.to_json())
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, '..', 'database', 'tasks.json'),
+        JSON.stringify(tasks),
+        (err) => {
+          if(err) {
+            reject(err)
+          }else{
+            resolve()
+          }
+        }
+      )
+    })
+  }
+
+  // Функция, получающая задачи из файла
   static get_all() {
     return new Promise((resolve,reject) => {
       fs.readFile(
@@ -41,12 +93,12 @@ class Tasks {
           else {
             resolve(JSON.parse(content))
           }
-          
         }
       )
     })
   }
 }
+
 /*
 const Tasks = sequelize.define("Tasks", {
   task_id: {
@@ -84,6 +136,4 @@ const Tasks = sequelize.define("Tasks", {
 })
 
 */
-
-
 module.exports = Tasks

@@ -29,7 +29,7 @@ app.use(express.static('src/css'))
 app.use(express.static('src/images'))
 app.use(express.static('src/js'))
 
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////

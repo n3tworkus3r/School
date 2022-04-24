@@ -267,10 +267,7 @@ xgallery
   height: 0;
   display: inline-block;
 }
-.cd-gallery img {
-  display: block;
-  width: 100%;
-}
+
 .cd-gallery .cd-fail-message {
   display: none;
   text-align: center;
