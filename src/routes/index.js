@@ -15,11 +15,16 @@ router.get('/', async (req,res) => {
     //res.sendFile(path.join(__dirname,'src/pages','index.html'))
 })
 
+
 router.get('/:id', async (req,res) => {
     const task = await Tasks.get_by_id(req.params.id)
-    res.render('task', {  })
+    res.render('task', {  
+        title: `Задача`,
+        task
+    })
 })
 
+/*
 router.get('/:id/edit', async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/')
@@ -32,7 +37,7 @@ router.get('/:id/edit', async (req, res) => {
         task
     }
 })
-
+*/
 router.post('/', async (req,res) => {
     console.log(req.body)
     const task = new Tasks(req.body.text, req.body.solution, req.body.img, req.body.complexity)

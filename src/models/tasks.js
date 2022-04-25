@@ -97,6 +97,11 @@ class Tasks {
       )
     })
   }
+
+  static async get_by_id(id) {
+    const tasks = await Tasks.get_all()
+    return tasks.find(t => t.id === id)
+  }
 }
 
 /*

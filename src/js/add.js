@@ -3,21 +3,21 @@
 ******************** SEARCH ************************
 ***************************************************/
 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("search_btn");
+var add_modal = document.getElementById("add_modal");
+var add_btn = document.getElementById("add_btn");
 var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-  modal.style.display = "block";
+add_btn.onclick = function() {
+  add_modal.style.display = "block";
 }
 
 span.onclick = function() {
-  modal.style.display = "none";
+  add_modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == add_modal) {
+    add_modal.style.display = "none";
   }
 }
 
