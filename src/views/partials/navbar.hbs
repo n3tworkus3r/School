@@ -3,14 +3,18 @@
   <!--<a href="#home" class="active">Профиль</a>-->
   
   <!-- ПЕРЕХОД НА ГЛАВНУЮ -->
-  <a href="/" class="card">ГЛАВНАЯ</a>
 
+  {{#if main}}
+  <a href="/">ГЛАВНАЯ</a>
+ 
   {{> profile}}
 
   <a href="#search" class="cd-filter-trigger"><img src="search.png"  height="25px" width="25px"/></a>
 
   {{> add}}
-  
+  {{else}}
+  <a href="/">ГЛАВНАЯ</a>
+  {{> profile}}
   <a href="#home"><img src="remove.png" height="25px" width="25px"/></a>
   {{> update}}
 
@@ -20,4 +24,5 @@
 
 
  {{> hide}}
+ {{/if}}
 </div>

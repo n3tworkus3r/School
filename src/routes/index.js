@@ -20,7 +20,8 @@ router.get('/:id', async (req,res) => {
     const task = await Tasks.get_by_id(req.params.id)
     res.render('task', {  
         title: `Задача`,
-        task
+        task,
+        t: true
     })
 })
 
