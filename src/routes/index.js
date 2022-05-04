@@ -38,12 +38,51 @@ router.get('/:id/edit', async (req, res) => {
     }
 })
 */
+
+
+
+///////////////////////////////
+// СОЗДАНИЕ ЗАДАЧИ (TASKS.JSON)
+///////////////////////////////
+/*
 router.post('/', async (req,res) => {
     console.log(req.body)
     const task = new Tasks(req.body.text, req.body.solution, req.body.img, req.body.complexity)
     await task.save()
     res.redirect('/')
 })
+*/
+///////////////////////////////
+// СОЗДАНИЕ ЗАДАЧИ (MSSQL)
+///////////////////////////////
+
+/*
+router.post('/', async (req,res) => {
+
+    try {
+        const task = await Tasks.create({
+            text: req.body.text,
+            solution: req.body.solution,
+            chapter: req.body.chapter,
+            img: req.body.img,
+            complexity: req.body.complexity,
+        })
+        res.status(201).json({task})
+    } 
+    catch(err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Server error'
+        })
+    }
+
+    //const task = new Tasks(req.body.text, req.body.solution, req.body.img, req.body.complexity)
+    //await task.save()
+    res.redirect('/')
+})
+
+*/
+///////////////////////////////
 
 router.post('/edit', async (req,res) => {
     await Tasks.update(req.body)

@@ -3,7 +3,8 @@
 const handlebars = require('express-handlebars')
 const express = require('express')
 const index_routes =  require('./src/routes/index')
-//const sequelize = require('./src/database/db_connect')
+const tasks = require('./src/models/tasks')
+const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
 //const path = require('path') // enable for express routing
 //const http = require('http')
@@ -40,7 +41,7 @@ app.use('/',index_routes)
 const PORT = process.env.PORT || 3000  
 async function start() {
     try {
-        //await sequelize.sync( /*{force: true}*/)
+        await sequelize.sync( /*{force: true}*/)
 
         // Запуск сервера (express)
         app.listen(PORT,() => {
