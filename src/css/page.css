@@ -4,5 +4,6 @@ body {
     background-size: 50%;
     font-family: 'Open Sans', sans-serif;
     /*background-repeat: no-repeat;*/
+    overflow: hidden;
 }
 

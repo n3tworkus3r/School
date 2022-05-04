@@ -44,14 +44,14 @@ router.get('/:id/edit', async (req, res) => {
 ///////////////////////////////
 // СОЗДАНИЕ ЗАДАЧИ (TASKS.JSON)
 ///////////////////////////////
-/*
+
 router.post('/', async (req,res) => {
     console.log(req.body)
     const task = new Tasks(req.body.text, req.body.solution, req.body.img, req.body.complexity)
     await task.save()
     res.redirect('/')
 })
-*/
+
 ///////////////////////////////
 // СОЗДАНИЕ ЗАДАЧИ (MSSQL)
 ///////////////////////////////

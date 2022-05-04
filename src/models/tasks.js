@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../database/db_connect');
+//const sequelize = require('../database/db_connect');
 const uuid = require('uuid')
 const fs = require('fs')
 const path = require('path');
