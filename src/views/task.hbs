@@ -4,35 +4,53 @@
 
 
 <div class="task_full_container">
-  <label for="task_text" class="label"><h3>Текст задачи</h3></label>
+  <label for="task_text" class="label1"><h3>Текст задачи</h3></label>
   <div class="task_text" id="task_text">
     <h3>{{task.text}}</h3>
   </div>
 
-  <label for="task_solution" class="label"><h3>Ответ</h3></label>
-  <div class="task_solution">
-    <h3>{{task.solution}}</h3>
-  </div>
-  
-  <label for="task_img" class="label"><h3>Изображение</h3></label>
+ 
+  <label for="task_img" class="label2"><h3></h3></label>
   <div class="task_img">
     {{task.img}}
   </div>
 
-  <label for="chapter" class="label"><h3>Раздел</h3></label>
+
+
+ <div class="Cont">
+  <label for="task_solution" class="label3" ><h3>Ответ: </h3></label>
+  <div id="hide_modal" class="task_solution">
+    <h3 id="idVhod">{{task.solution}}</h3>
+    
+  </div>
+  </div>
+  
+ 
+
+   
+  
+ <div class="Group">
+  <div class="Cont2">
+  <label for="chapter" class="label4"><h3>Раздел:</h3></label>
   <div id="chapter" name="chapter" class="chapter">
     <h3>{{task.chapter}}</h3>
   </div>
-      
-  <label for="year" class="label"><h3>Класс</h3></label>
+  </div>
+  
+  <div class="Cont3">
+  <label for="year" class="label5"><h3>Класс: </h3></label>
   <div id="year" name="year" class="year">
     <h1>{{task.year}}</h1>
   </div>
-
-  <label for="complexity" class="label"><h3>Сложность задачи</h3></label>
-  <div id="complexity" name="complexity"> 
+  </div>
+  
+ <div class="Cont4">
+  <label for="complexity" class="label6"><h3>Сложность задачи: </h3></label>
+  <div id="complexity" name="complexity" class="complexity"> 
     <h1>{{task.complexity}}</h1>
   </div>
+  </div>
+  
 
 </div>
 
@@ -48,7 +66,7 @@
   margin-top: 10px;
   padding: 5px;
   /*text-align: left;*/
-  font-family: arial;
+  font-family: Lato;
 }
 
 
@@ -68,9 +86,7 @@
   opacity: 0.7;
 }
 
-.label {
-  font-size: 15px;
-  font-style: italic;
-}
+
+
 
 </style>

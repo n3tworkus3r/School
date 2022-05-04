@@ -15,7 +15,7 @@ CREATE TABLE Tasks
 	complexity float
 );
 */
-/*
+
 class Tasks {
   constructor(text,solution,img,year,chapter,complexity){
     this.id = uuid.v4(),
@@ -104,7 +104,7 @@ class Tasks {
   }
 }
 
-*/
+/*
 const Tasks = sequelize.define("Tasks", {
   task_id: {
     type: Sequelize.INTEGER,
@@ -144,6 +144,6 @@ const Tasks = sequelize.define("Tasks", {
     field: "complexity"
   }
 })
-
+*/
 
 module.exports = Tasks
