@@ -1,5 +1,6 @@
 
 const {Schema, model} = require('mongoose');
+const { stringify } = require('uuid');
 
 const tasks = new Schema({
   text: {
@@ -15,6 +16,9 @@ const tasks = new Schema({
   },
   img: {
     type: String
+  },
+  year: {
+    type: String,
   },
   complexity: {
     type: Number

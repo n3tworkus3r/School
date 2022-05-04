@@ -4,6 +4,10 @@ const router = Router()
 
 router.set('views', './src/views')
 
+///////////////////////////////////////
+// ВЫВОД ВСЕХ ЗАДАЧ
+///////////////////////////////////////
+
 router.get('/', async (req,res) => {
     //const tasks = await Tasks.get_all() // Выборка всех эл-в из tasks.json
     const tasks = await Tasks.find() // Выборка всех элементов из БД
@@ -16,7 +20,9 @@ router.get('/', async (req,res) => {
     //res.sendFile(path.join(__dirname,'src/pages','index.html'))
 })
 
-
+///////////////////////////////////////
+// ПЕРЕХОД К ЗАДАЧЕ
+///////////////////////////////////////
 router.get('/:id', async (req,res) => {
     const task = await Tasks.findById(req.params.id)
     res.render('task', {  
@@ -55,6 +61,7 @@ router.post('/', async (req,res) => {
         solution: req.body.solution,
         chapter: req.body.chapter,
         img: req.body.img,
+        year: req.body.year,
         complexity: req.body.complexity
     })
 

@@ -1,3 +1,4 @@
+/*
 var config = require('./db_connect')
 const mssql = require('mssql')
 
@@ -13,3 +14,4 @@ async function get_data() {
 module.exports = {
     get_data: get_data
 }
+*/
