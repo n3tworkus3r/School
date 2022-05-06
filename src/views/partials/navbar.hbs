@@ -1,29 +1,30 @@
 
 <div class="topnav navbar" id="myTopnav">
   <!--<a href="#home" class="active">Профиль</a>-->
-  
+
   <!-- ПЕРЕХОД НА ГЛАВНУЮ -->
 
   {{#if main}}
-  <a href="/">ГЛАВНАЯ</a>
- 
-  {{> profile}}
+    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
+  
+    {{> profile}}
 
-  <a href="#search" class="cd-filter-trigger"><img src="search.png"  height="25px" width="25px"/></a>
+    <a href="#search" class="cd-filter-trigger"><img src="search.png"  height="25px" width="25px"/></a>
 
+<<<<<<< HEAD
   {{> add}}
   {{> hide}}
+=======
+    {{> add}}
+>>>>>>> 440eea4d2e3e24f655385227374cccf654051265
   {{else}}
-  <a href="/">ГЛАВНАЯ</a>
-  {{> profile}}
-  <a href="#home"><img src="remove.png" height="25px" width="25px"/></a>
-  {{> update}}
-
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-
-
- {{> hide}}
+    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
+    {{> profile}}
+    {{> remove}}
+    {{> update}}
+    <!------------------- БУРГЕР ----------------------->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    <!-------------------------------------------------->
+    {{> hide}}
  {{/if}}
 </div>

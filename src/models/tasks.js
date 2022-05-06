@@ -1,21 +1,43 @@
-const Sequelize = require('sequelize');
-//const sequelize = require('../database/db_connect');
-const uuid = require('uuid')
-const fs = require('fs')
-const path = require('path');
-const res = require('express/lib/response');
 
+const {Schema, model} = require('mongoose');
+const { stringify } = require('uuid');
+
+const tasks = new Schema({
+  text: {
+    type: String,
+    required: true
+  },
+  solution: {
+    type: String,
+    required: true
+  },
+  chapter: {
+    type: String
+  },
+  img: {
+    type: String
+  },
+  year: {
+    type: String,
+  },
+  complexity: {
+    type: Number
+  }
+})
+
+module.exports = model('Tasks', tasks)
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+////// МЕТОДЫ ДЛЯ РАБОТЫ С TASKS.JSON ///////
+/////////////////////////////////////////////
 /*
-CREATE TABLE Tasks  
-(
-	task_id int PRIMARY KEY NOT NULL IDENTITY,  
-	text varchar(255) NOT NULL,
-	solution varchar(255) NOT NULL,
-	img varchar(100),
-	complexity float
-);
-*/
-
 class Tasks {
   constructor(text,solution,img,year,chapter,complexity){
     this.id = uuid.v4(),
@@ -59,8 +81,7 @@ class Tasks {
     })
   }
 
-  // Функция, сохраняющая в файл tasks.json добавленную задачу
-  async save() {
+  async save() { // Функция, сохраняющая в файл tasks.json добавленную задачу
     const tasks = await Tasks.get_all()
     //console.log('Tasks', tasks)
     tasks.push(this.to_json())
@@ -103,7 +124,25 @@ class Tasks {
     return tasks.find(t => t.id === id)
   }
 }
+*/
+/////////////////////////////////////////////
+//////////// MSSQL SERVER MODEL /////////////
+/////////////////////////////////////////////
+//const Sequelize = require('sequelize');
+//const sequelize = require('../database/db_connect');
+//const uuid = require('uuid');
+//const path = require('path');
 
+/*
+CREATE TABLE Tasks  
+(
+	task_id int PRIMARY KEY NOT NULL IDENTITY,  
+	text varchar(255) NOT NULL,
+	solution varchar(255) NOT NULL,
+	img varchar(100),
+	complexity float
+);
+*/
 /*
 const Tasks = sequelize.define("Tasks", {
   task_id: {
@@ -144,6 +183,10 @@ const Tasks = sequelize.define("Tasks", {
     field: "complexity"
   }
 })
-*/
 
+// ЭКСПОРТ МОДЕЛИ MSSQL
 module.exports = Tasks
+*/
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+

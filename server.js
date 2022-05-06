@@ -1,8 +1,10 @@
 ////////// USED MODULES //////////
-
-const handlebars = require('express-handlebars')
+const mongoose = require('mongoose') // пакет взаимодействия с MongoDB
+const express_handlebars = require('express-handlebars')
 const express = require('express')
+const hbs_v_4_5_3 = require('handlebars')
 const index_routes =  require('./src/routes/index')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 //const tasks = require('./src/models/tasks')
 //const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
@@ -16,14 +18,22 @@ const app = express()
 /////////////////////////////////
 
 ////// HANDLEBARS SETTING ///////
-const hbs = handlebars.create({
+const hbs = express_handlebars.create({
     defaultLayout: 'main',
     extname: 'hbs'
 })
 /////////////////////////////////
 
 //// VARIABLES REGISTRATION /////
-app.engine('hbs', hbs.engine)
+//app.engine('hbs', hbs.engine)
+
+app.engine('hbs', express_handlebars.engine({
+    handlebars: allowInsecurePrototypeAccess(hbs_v_4_5_3),
+    defaultLayout: 'main',
+    extname: 'hbs'
+}));
+
+
 app.set('view engine', 'hbs')
 
 app.use(express.static('src/css'))
@@ -38,11 +48,13 @@ app.use('/',index_routes)
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////
-const PORT = process.env.PORT || 3000  
+const PORT = process.env.PORT || 3000
+
 async function start() {
     try {
         //await sequelize.sync( /*{force: true}*/)
-
+        const url = 'mongodb://localhost:27017/School'
+        await mongoose.connect(url, {useNewUrlParser: true}) // Подключение к СУБД
         // Запуск сервера (express)
         app.listen(PORT,() => {
             console.log(`Server is running on port ${PORT}`)
