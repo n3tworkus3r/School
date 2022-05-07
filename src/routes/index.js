@@ -23,6 +23,7 @@ router.get('/', async (req,res) => {
 ///////////////////////////////////////
 // ПЕРЕХОД К ЗАДАЧЕ
 ///////////////////////////////////////
+
 router.get('/:id', async (req,res) => {
     const task = await Tasks.findById(req.params.id)
     res.render('task', {  

@@ -4,6 +4,7 @@ const express_handlebars = require('express-handlebars')
 const express = require('express')
 const hbs_v_4_5_3 = require('handlebars')
 const index_routes =  require('./src/routes/index')
+const task_routes =  require('./src/routes/task')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 //const tasks = require('./src/models/tasks')
 //const sequelize = require('./src/database/db_connect')
@@ -45,6 +46,7 @@ app.use(express.urlencoded({extended: true}))
 
 //////// EXPRESS ROUTING ////////
 app.use('/',index_routes)
+app.use('/',task_routes)
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////
