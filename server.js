@@ -6,6 +6,7 @@ const hbs_v_4_5_3 = require('handlebars')
 const index_routes =  require('./src/routes/index')
 const task_routes =  require('./src/routes/task')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+const body_parser = require('body-parser');
 //const tasks = require('./src/models/tasks')
 //const sequelize = require('./src/database/db_connect')
 //const fs = require('fs')
@@ -44,6 +45,7 @@ app.use(express.static('src/images'))
 app.use(express.static('src/js'))
 
 app.use(express.urlencoded({extended: true}))
+app.use(body_parser.urlencoded({ extended: false }));
 /////////////////////////////////
 
 //////// EXPRESS ROUTING ////////
