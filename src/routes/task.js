@@ -8,12 +8,18 @@ router.set('views', './src/views')
 // УДАЛЕНИЕ ЗАДАЧИ
 ///////////////////////////////////////
 
-router.post('/', async (req,res) => {
-
-    const text = req.body.text
-    console.log("!!!"+text)
-    const task = await Tasks.deleteOne()({text:req.body.text})
+router.post('/remove', async (req,res) => {
+   try{
+       console.log('XXXXXXXXXXX')
+    await Tasks.deleteOne({
+        _id:req.body.id
+    })
     res.redirect('/')
+   }
+   catch(e) {
+        console.log(e)
+   }
+  
 })
 
 module.exports = router
