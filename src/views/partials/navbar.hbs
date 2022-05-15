@@ -9,7 +9,7 @@
   
     {{> profile}}
 
-    <a href="#search" class="cd-filter-trigger"><img src="search.png"  height="25px" width="25px"/></a>
+    <a href="#search" class="cd-filter-trigger profile">ПОИСК</a> <!--<img src="search.png"  height="25px" width="25px"/>-->
 
     {{> add}}
 
@@ -18,9 +18,11 @@
     {{> profile}}
     {{> remove}}
     {{> update}}
+
+    {{> hide}}
+  {{/if}}
+
     <!------------------- БУРГЕР ----------------------->
     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
     <!-------------------------------------------------->
-    {{> hide}}
- {{/if}}
 </div>

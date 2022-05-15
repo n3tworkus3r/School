@@ -19,13 +19,13 @@ const app = express()
 /////////////////////////////////
 
 ////// HANDLEBARS SETTING ///////
-const hbs = express_handlebars.create({
-    defaultLayout: 'main',
-    extname: 'hbs'
-})
+//const hbs = express_handlebars.create({
+//    defaultLayout: 'main',
+//    extname: 'hbs'
+//})
 /////////////////////////////////
 
-//// VARIABLES REGISTRATION /////
+/// SERVER INSTANCE CONFIGURE ///
 //app.engine('hbs', hbs.engine)
 
 app.engine('hbs', express_handlebars.engine({
@@ -36,7 +36,9 @@ app.engine('hbs', express_handlebars.engine({
 
 
 app.set('view engine', 'hbs')
+//////////////////////////////////
 
+//// INIT PUBLIC DIRECTORIES  ////
 app.use(express.static('src/css'))
 app.use(express.static('src/images'))
 app.use(express.static('src/js'))

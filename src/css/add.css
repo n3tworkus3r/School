@@ -1,8 +1,20 @@
 #task_text {
-    padding: auto;
-    height: 20%;
+  padding: auto;
+  height: 20%;
 }
 
+.add_btn {
+  font-size: 16px;  
+  font-weight: 700;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  height: 50px;
+}
 
 input[type=text], select, textarea {
   width: 100%;
