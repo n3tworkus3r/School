@@ -9,11 +9,15 @@
   <div class="remove_modal_content">
     <span class="close">&times;</span>
     <h1>Вы действительно хотите удалить задачу?</h1>
-    <form action="/remove" method="POST">
-      <input type="hidden" name="id" value="{{task.id}}">
-      <button href='/{{task.id}}#remove/yes' class='remove_btn' id='yes' >Да</button>
-    </form>
-    <!--<button class='remove_btn' id ='no'>Нет</button>-->
+    <div>
+      <form action="/remove" class="remove_form" method="POST">
+        <input type="hidden" name="id" value="{{task.id}}">
+        <button href="/{{task.id}}#remove/yes" class="remove_btn" id="yes">Удалить</button>
+
+        <!--<button href="/{{task.id}}#remove" class='remove_btn' id="no_remove" type="">Нет</button>-->
+      </form>
+    </div>
+
   </div>
 
 </div>

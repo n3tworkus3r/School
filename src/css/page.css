@@ -7,3 +7,6 @@ body {
     overflow: hidden;
 }
 
+button {
+    font-family : inherit;
+}

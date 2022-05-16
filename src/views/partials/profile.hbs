@@ -1,10 +1,9 @@
   <!---------- PROFILE ---------->
   <div class="profile" id="profile_btn">
     <!--<button class="profile_btn" onclick="profile_drop()">Профиль </button> -->
-   <button class="profile_btn">ПРОФИЛЬ <!-- <i class="fa fa-caret-down"></i>--> </button> 
+   <button class="profile_btn" onclick="profile_drop()">ПРОФИЛЬ <!-- <i class="fa fa-caret-down"></i>--> </button> 
     <div class="profile-content" id="profile_dropdown">
-      <a href="#">Мой профиль</a>
-      <a href="#">Добавить</a>
+      <a href="/profile">Открыть</a>
       <a href="#">Войти</a>
     </div>
   </div> 
@@ -12,7 +11,7 @@
 <script> 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function profile_drop() {
+  function profile_drop() {
     document.getElementById("profile_dropdown").classList.toggle("show");
   }
   
@@ -25,6 +24,8 @@ function profile_drop() {
       }
     }
   }
+
+
 </script>
 
 <style>
@@ -57,21 +58,21 @@ function profile_drop() {
     display: none;
     position: absolute;
     background-color: #333;
-    min-width: 160px;
+    min-width: 115px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 0;
+    z-index: 1;
   }
   
   .profile-content a {
     float: none;
-    color: black;
+    color: white;
     padding: 14px 16px;
     text-decoration: none;
     display: block;
   }
   
   .profile-content a:hover {
-    background-color: #333;
+    background-color: #4b19ff;
 
   }
   

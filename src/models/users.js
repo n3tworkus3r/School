@@ -1,5 +1,36 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database/db_connect");
+const {Schema, model} = require('mongoose');
+
+const users = new Schema({
+  login: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  role: {
+    type: Number
+  }
+})
+
+module.exports = model('Users', users)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 CREATE TABLE Users  
@@ -9,7 +40,11 @@ CREATE TABLE Users
 	password varchar(30) NOT NULL,  
 	role int NOT NULL
 ); 
-*/
+
+
+const Sequelize = require("sequelize");
+const sequelize = require("../database/db_connect");
+
 
 const Users = sequelize.define("Users", {
   id: {
@@ -41,3 +76,4 @@ const Users = sequelize.define("Users", {
 
 
 module.exports = Users;
+*/
