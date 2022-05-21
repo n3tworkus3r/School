@@ -4,7 +4,7 @@
 }
 
 .add_btn {
-  font-size: 16px;  
+  font-size: 16px;
   font-weight: 700;
   border: none;
   outline: none;
@@ -16,19 +16,21 @@
   height: 50px;
 }
 
-input[type=text], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /*border: 1px solid #ccc;
+  border-radius: 4px;*/
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
+input[type="submit"] {
+  background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -36,7 +38,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 
@@ -46,9 +48,31 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
+.in {
+  color: #ffffff;
+  font-family: ‘Lato’, sans-serif;
+  font-size: 14px;
+}
 
+.inp {
+  color: #ffffff;
+  text-align: center;
+}
 
+.btnsave{
+  color: #adb7bd;
+  border: none;
+  background-color: #333;
+  padding: 15px 20px;
+  font-family: ‘Lucida Sans’, Arial, sans-serif;
+  font-size: 20px;
+  
+}
+.btnsave:hover {
+  background-color: #4b19ff;
+  
+}
 
-
-
-
+.bytton{
+  text-align: center;
+}

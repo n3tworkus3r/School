@@ -61,7 +61,7 @@ const PORT = process.env.PORT || 3000
 async function start() {
     try {
         //await sequelize.sync( /*{force: true}*/)
-        const url = 'mongodb://localhost:27017/School'
+        const url = 'mongodb://127.0.0.1:27017/School'
         await mongoose.connect(url, {useNewUrlParser: true}) // Подключение к СУБД
         // Запуск сервера (express)
         app.listen(PORT,() => {

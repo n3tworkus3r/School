@@ -47,6 +47,9 @@ router.get('/:id', async (req,res) => {
 
 
 
+
+
+
 /*
 router.post('/:id/edit', async (req, res) => {
     if (!req.query.allow) {
