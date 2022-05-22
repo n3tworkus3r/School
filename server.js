@@ -6,6 +6,7 @@ const hbs_v_4_5_3 = require('handlebars')
 const index_routes =  require('./src/routes/index')
 const task_routes =  require('./src/routes/task')
 const profile_routes =  require('./src/routes/profile')
+const login_routes =  require('./src/routes/login')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const body_parser = require('body-parser');
 //const tasks = require('./src/models/tasks')
@@ -53,6 +54,7 @@ app.use(body_parser.urlencoded({ extended: false }));
 app.use('/',index_routes)
 app.use('/',task_routes)
 app.use('/',profile_routes)
+app.use('/',login_routes)
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////

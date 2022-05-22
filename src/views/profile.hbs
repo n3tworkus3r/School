@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="card">
-  <img src="WP.png" alt="John" style="width:100%">
-  <h1>Какой-то мудак</h1>
+  <img src="WP.png" alt="John Doe" id="card_img" style="width:20%; height:30%">
+<div id="name_surmane"><h1>Имя</h1> <h1>Фамилия</h1></div>
   <p class="title">Не знаю зачем он здесь</p>
   <p>Тестовая карточка</p>
   <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -16,11 +16,12 @@
 <style>
 
 .card {
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 40%;
-  margin: auto;
-  margin-top: 10%;
+  display: flex;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*//* TRANSPARENCY COLOR */
+  color: white;
+  background-color: #333;
+  /*max-width: 40%;*/
+  margin: 2%;
   text-align: center;
 }
 
@@ -52,4 +53,14 @@ button:hover, a:hover {
   opacity: 0.7;
 }
 
+
+#card_img {
+  margin: 2%;
+  margin-left: 5%;
+}
+
+#name_surmane {
+  margin-left: 20%;
+  
+}
 </style>
