@@ -14,3 +14,30 @@ button {
 .validate{
     border: none;
 }
+
+.bytton{
+    text-align: center;
+  }
+
+  .btnb{
+    color: white;
+    border: none;
+    background-color: #4D4D4D;
+    padding: 15px 20px;
+    font-family: ‘Lucida Sans’, Arial, sans-serif;
+    font-size: 20px;
+  }
+
+  .btnb:hover{
+    background-color: #4b19ff;
+   }
+
+   .updtext1{
+    color: #ffffff;
+    font-family: ‘Lato’, sans-serif;
+    font-size: 14px;
+  }
+  .updtext{
+    color: #ffffff;
+  text-align: center;
+  }
