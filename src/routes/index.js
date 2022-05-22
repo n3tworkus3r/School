@@ -27,7 +27,7 @@ router.get('/', async (req,res) => {
 router.get('/profile', async (req,res) => {
     res.render('profile', {  
         title: `Профиль`,
-        main: true
+        profile: true
     })
 })
 
@@ -38,7 +38,7 @@ router.get('/profile', async (req,res) => {
 router.get('/login', async (req,res) => {
     res.render('login', {  
         title: `Войти`,
-        main: true
+        login: true
     })
 })
 

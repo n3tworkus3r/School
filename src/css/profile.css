@@ -18,7 +18,7 @@
     height: 50px;
   }
   
-  .navbar a:hover, .profile:hover .profile_btn, .profile_btn:focus {
+  .navbar a:hover, .profile:hover .profile_btn, .profile_btn:hover {
     background-color: #4b19ff;
     padding: 16px 16px;
   }
@@ -48,3 +48,4 @@
   .show {
     display: grid;
   }
+  

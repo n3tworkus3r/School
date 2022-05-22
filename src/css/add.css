@@ -48,31 +48,11 @@ input[type="submit"]:hover {
   padding: 20px;
 }
 
-.in {
-  color: #ffffff;
-  font-family: ‘Lato’, sans-serif;
-  font-size: 14px;
-}
 
-.inp {
-  color: #ffffff;
-  text-align: center;
-}
 
-.btnsave{
-  color: #adb7bd;
-  border: none;
-  background-color: #4D4D4D;
-  padding: 15px 20px;
-  font-family: ‘Lucida Sans’, Arial, sans-serif;
-  font-size: 20px;
-  
-}
-.btnsave:hover {
-  background-color: #4b19ff;
-  
-}
 
-.bytton{
-  text-align: center;
-}
+
+
+
+
+

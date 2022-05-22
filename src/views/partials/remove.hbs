@@ -12,7 +12,8 @@
     <div>
       <form action="/remove" class="remove_form" method="POST">
         <input type="hidden" name="id" value="{{task.id}}">
-        <button href="/{{task.id}}#remove/yes" class="remove_btn" id="yes">Удалить</button>
+        <div class="bytton"> <button href="/{{task.id}}#remove/yes" class="btnb" id="yes">Удалить</button></div>
+        
 
         <!--<button href="/{{task.id}}#remove" class='remove_btn' id="no_remove" type="">Нет</button>-->
       </form>
