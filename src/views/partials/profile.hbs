@@ -16,7 +16,7 @@ toggle between hiding and showing the dropdown content */
   }
   
   // Close the dropdown if the user clicks outside of it
-  window.onclick = function(e) {
+  document.onclick = function(e) {
     if (!e.target.matches('.profile_btn')) {
     var profile_dropdown = document.getElementById("profile_dropdown");
       if (profile_dropdown.classList.contains('show')) {
