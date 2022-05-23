@@ -3,7 +3,7 @@
   z-index: 1;
   padding-left: 10%;
   padding-top: 2%;
-
+  overflow-wrap: break-word;
 }
 
 .container {

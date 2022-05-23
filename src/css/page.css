@@ -41,3 +41,7 @@ button {
     color: #ffffff;
   text-align: center;
   }
+
+  .fail{
+    padding-left: 0px;
+  }
